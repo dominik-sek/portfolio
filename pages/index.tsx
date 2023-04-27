@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
+import { Section } from '../components/shared/section';
 
 const Home: NextPage = () => {
   return (
-    <div className={'w-full h-screen bg-black flex justify-center items-center text-white'}>
-      <div className={'font-sans font-bold'}>inter</div>
-      <div></div>
-    </div>
+    <main>
+      <Section variant={'blue'}>
+        <h1 className={'text-5xl font-bold'}>Hello World</h1>
+      </Section>
+    </main>
   );
 };
 

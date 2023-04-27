@@ -12,7 +12,13 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      colors: {
+        primary: '#1a237e',
+        secondary: '#ffca28',
+        accents: '#a7abd1',
+      },
     },
   },
+
   plugins: [],
 };
