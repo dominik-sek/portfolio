@@ -13,9 +13,9 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
-        primary: '#1a237e',
-        secondary: '#ffca28',
-        accents: '#a7abd1',
+        darkBlue: '#33397d',
+        yellow: '#ffca28',
+        lightBlue: '#a7abd1',
       },
     },
   },

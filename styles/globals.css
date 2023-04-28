@@ -9,3 +9,13 @@
         grayDark: '#333333',
 
         */
+
+@layer components {
+  .text-stroke-blue {
+    -webkit-text-stroke: 1.5px #33397d;
+  }
+
+  .text-stroke-yellow {
+    -webkit-text-stroke: 1.5px #ffca28;
+  }
+}

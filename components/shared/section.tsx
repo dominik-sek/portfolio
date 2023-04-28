@@ -10,12 +10,13 @@ export const Section = (props: SectionProps) => {
   return (
     <section
       className={clsx(
-        'w-full h-screen flex justify-center items-center bg-primary',
-        variant === 'blue' && 'bg-primary',
-        variant === 'yellow' && 'bg-secondary'
+        'w-full h-fit flex justify-center items-center bg-darkBlue',
+        variant === 'blue' && 'bg-darkBlue',
+        variant === 'yellow' && 'bg-yellow',
+        props.className
       )}
     >
-      <div className={clsx('w-full h-full max-w-screen-xl text-accents')}>{props.children}</div>
+      <div className={clsx('w-full h-full max-w-screen-xl text-lightBlue')}>{props.children}</div>
     </section>
   );
 };
