@@ -4,11 +4,11 @@ import { Footer } from './footer';
 
 export const Layout = (props: PropsWithChildren) => {
   return (
-    <>
+    <div id={'layout'}>
       {/*<Header />*/}
       <Navbar />
       {props.children}
       <Footer />
-    </>
+    </div>
   );
 };
