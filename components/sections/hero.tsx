@@ -1,10 +1,12 @@
 import { Section } from '../shared/section';
-import { OutlinedText } from '../typography/outlined-text';
+import { useState } from 'react';
 
 export const Hero = () => {
+  const [state, setState] = useState(() => []);
+  console.log(state);
   return (
-    <Section className={'!h-screen'}>
-      <div className={'w-full h-full flex items-center  px-3 md:px-24'}>
+    <Section className={'h-screen'}>
+      <div className={'w-full h-full flex items-center'}>
         <div className={'flex flex-col gap-2'}>
           <span className={'text-2xl md:text-3xl'}>Hi, I&apos;m</span>
           <div>

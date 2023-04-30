@@ -1,7 +1,7 @@
 'use client';
 // ^ in order to use framer motion on the server side, we need to add this line
 import clsx from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { OutlinedText } from '../typography/outlined-text';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
@@ -64,7 +64,7 @@ export const Navbar = (): JSX.Element => {
       <div className={'flex flex-col gap-y-2 z-10 px-3 py-6 cursor-pointer'} onClick={() => setIsOpen(!isOpen)}>
         <span
           className={clsx(
-            'w-12 h-1 rounded-md block bg-lightBlue duration-200',
+            'w-12 h-1 rounded-md block bg-lightBlue duration-200 ',
             isOpen && 'rotate-45 translate-y-2 !bg-darkBlue'
           )}
         ></span>
