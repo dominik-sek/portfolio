@@ -10,7 +10,8 @@ export const Projects = () => {
       {
         id: 1,
         name: 'Project 1',
-        description: 'This is a description of project 1',
+        description:
+          'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum quas. Quisquam, voluptatum quas lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum quas. Quisquam, voluptatum quas lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum quas. Quisquam, voluptatum quas  ',
         imageUrl: 'https://via.placeholder.com/150',
         liveUrl: 'https://www.google.com',
         status: 'In Progress',
@@ -55,12 +56,14 @@ export const Projects = () => {
   }, []);
 
   return (
-    <Section className={''}>
+    <Section className={'overflow-x-hidden'}>
       <div className={'flex flex-col pb-12 '}>
         <OutlinedText className={'text-4xl'} noHover>
           Projects
         </OutlinedText>
       </div>
+      {/*<Blob className={'bg-yellow/30 top-1/2 right-1/2 translate-x-1/2 w-80 h-80 '} />*/}
+      {/*<Blob className={'bg-darkBlue top-1/3 left-0'} />*/}
       <ProjectGrid projects={projectList} />
     </Section>
   );

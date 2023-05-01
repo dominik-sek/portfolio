@@ -53,14 +53,14 @@ const listVariants = {
 };
 
 const Overlay = (setIsOpen: Dispatch<SetStateAction<boolean>>) => {
-  return <div onClick={() => setIsOpen(false)} className={'fixed top-0 left-0 w-full h-full bg-black/50 z-0'}></div>;
+  return <div onClick={() => setIsOpen(false)} className={'fixed top-0 left-0 w-full h-full bg-black/40 z-0'}></div>;
 };
 
 export const Navbar = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={clsx('flex flex-col fixed items-end w-full z-50')}>
+    <div className={clsx('flex flex-col fixed items-end w-full z-50 backdrop-blur-md ')}>
       <div className={'flex flex-col gap-y-2 z-10 px-3 py-6 cursor-pointer'} onClick={() => setIsOpen(!isOpen)}>
         <span
           className={clsx(

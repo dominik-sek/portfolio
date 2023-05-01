@@ -1,11 +1,12 @@
 import { Section } from '../shared/section';
-import { useState } from 'react';
+import { Blob } from '../shared/blob';
 
 export const Hero = () => {
-  const [state, setState] = useState(() => []);
-  console.log(state);
   return (
-    <Section className={'h-screen'}>
+    <Section className={'h-screen backdrop-blur-2xl overflow-hidden'}>
+      <Blob className={'bg-lightBlue/10 -top-1/4 left-0 !w-1/2'} />
+      <Blob className={'bg-lightBlue/30 bottom-0 right-0 rotate-180 w-52 !overflow-hidden'} />
+
       <div className={'w-full h-full flex items-center'}>
         <div className={'flex flex-col gap-2'}>
           <span className={'text-2xl md:text-3xl'}>Hi, I&apos;m</span>

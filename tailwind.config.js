@@ -20,6 +20,14 @@ module.exports = {
       gridTemplateRows: {
         8: 'repeat(8, minmax(0, 1fr))',
       },
+      blur: {
+        '4xl': '72px',
+        '5xl': '86px',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'bounce-slow': 'bounce 3s linear infinite',
+      },
     },
   },
 
