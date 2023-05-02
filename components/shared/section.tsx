@@ -1,10 +1,12 @@
 import React, { HTMLAttributes } from 'react';
 import clsx from 'clsx';
 
-interface SectionProps extends HTMLAttributes<HTMLDivElement> {}
+interface SectionProps extends HTMLAttributes<HTMLDivElement> {
+  wrapperClassName?: string;
+}
 
 export const Section = (props: SectionProps) => {
-  const { className, children } = props;
+  const { className, children, wrapperClassName } = props;
   return (
     <section
       className={clsx(
@@ -12,7 +14,7 @@ export const Section = (props: SectionProps) => {
         className,
       )}
     >
-      <div className={clsx('w-full h-full max-w-screen-xl text-lightBlue ')}>{children}</div>
+      <div className={clsx('w-full h-full max-w-screen-xl text-lightBlue z-10', wrapperClassName)}>{children}</div>
     </section>
   );
 };

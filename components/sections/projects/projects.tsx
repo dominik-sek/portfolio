@@ -9,13 +9,24 @@ export const Projects = () => {
     setProjectList([
       {
         id: 1,
-        name: 'Project 1',
-        description:
-          'lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum quas. Quisquam, voluptatum quas lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum quas. Quisquam, voluptatum quas lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum quas. Quisquam, voluptatum quas  ',
-        imageUrl: 'https://via.placeholder.com/150',
-        liveUrl: 'https://www.google.com',
-        status: 'In Progress',
-        technologies: ['React', 'Typescript', 'TailwindCSS'],
+        name: 'University Management',
+        description: '',
+        imageUrl: 'https://github.com/gothic459/um-client/blob/main/images/messages.png',
+        liveUrl: 'https://um.dominiksek.com',
+        status: 'Completed',
+        technologies: [
+          'React',
+          'Typescript',
+          'ChakraUI',
+          'Zustand',
+          'i18n',
+          'Express.js',
+          'Socket.io',
+          'PostgreSQL',
+          'Prisma',
+          'Nginx',
+          'Git',
+        ],
         githubUrl: 'https://www.github.com',
         starred: true,
       },
@@ -57,7 +68,7 @@ export const Projects = () => {
 
   return (
     <Section className="overflow-x-hidden">
-      <div className="flex flex-col pb-12 ">
+      <div className="pb-24 ">
         <OutlinedText className="text-4xl" noHover>
           Projects
         </OutlinedText>

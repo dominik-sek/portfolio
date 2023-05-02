@@ -10,4 +10,9 @@ interface Project {
   technologies: string[];
   starred: boolean;
 }
+interface Technology {
+  title: string;
+  icon: string;
+}
+
 type ProjectStatus = 'Completed' | 'In Progress' | 'On Hold' | 'Cancelled';

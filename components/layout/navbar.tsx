@@ -2,8 +2,9 @@
 
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import React, { Dispatch, SetStateAction, useState } from 'react';
-
+import React, {
+  Dispatch, SetStateAction, useEffect, useState,
+} from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { createPortal } from 'react-dom';
 import { OutlinedText } from '../typography/outlined-text';
@@ -14,11 +15,11 @@ const routes = [
     href: '#',
   },
   {
-    name: 'About',
+    name: 'Projects',
     href: '#',
   },
   {
-    name: 'Projects',
+    name: 'About',
     href: '#',
   },
   {
@@ -54,23 +55,34 @@ const listVariants = {
 };
 
 const Overlay = (setIsOpen: Dispatch<SetStateAction<boolean>>) => (
-  <div role="none" onClick={() => setIsOpen(false)} className="fixed top-0 left-0 w-full h-full bg-black/40 z-0" />
+  <div role="none" onClick={() => setIsOpen(false)} className="fixed top-0 left-0 w-full h-full bg-black/40 z-40" />
 );
 
 export const Navbar = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const handleEscape = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       setIsOpen(false);
     }
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollPosition]);
+
   return (
     <div
-      role="none"
+      role="presentation"
       onKeyDown={handleEscape}
-      className={clsx('flex flex-col fixed items-end w-full z-50 backdrop-blur-md shadow ')}
+      className={clsx('flex flex-col fixed items-end w-full z-50 backdrop-blur-md ', scrollPosition > 300 && 'shadow')}
     >
       <button
+        id="menu-button"
+        aria-label="Menu"
         type="button"
         className="flex flex-col gap-y-2 z-10 px-3 py-6 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
@@ -99,6 +111,7 @@ export const Navbar = (): JSX.Element => {
           'flex flex-col absolute gap-6 text-right px-6 pt-20 pb-10 bg-gray-300 w-full -translate-y-full duration-700 transition-all',
           isOpen && 'translate-y-0',
         )}
+        aria-hidden={!isOpen}
       >
         <motion.ul
           className={clsx('flex flex-col gap-6')}
@@ -108,7 +121,9 @@ export const Navbar = (): JSX.Element => {
         >
           {routes.map((route) => (
             <motion.li key={route.name} variants={listVariants}>
-              <OutlinedText>{route.name}</OutlinedText>
+              <a href={route.href}>
+                <OutlinedText>{route.name}</OutlinedText>
+              </a>
             </motion.li>
           ))}
         </motion.ul>

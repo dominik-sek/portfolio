@@ -1,12 +1,12 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import { Hero, Projects } from '../components/sections';
+import { Hero, Projects, About } from '../components/sections';
 
 const Home: NextPage = () => (
   <main>
     <Hero />
-    {/* <About /> */}
     <Projects />
+    <About />
     {/* <Contact /> */}
   </main>
 );

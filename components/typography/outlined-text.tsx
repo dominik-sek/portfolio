@@ -12,7 +12,7 @@ export const OutlinedText = (props: OutlinedTextProps): JSX.Element => {
     as, className, noHover, children,
   } = props;
   const baseClasses = `text-stroke-blue text-transparent duration-100 font-black text-5xl ${
-    noHover ? '' : 'hover:text-darkBlue cursor-pointer'
+    noHover ? 'cursor-default' : 'hover:text-darkBlue cursor-pointer'
   }`;
   switch (as) {
     case 'h1':

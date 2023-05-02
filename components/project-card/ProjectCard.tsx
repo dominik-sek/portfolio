@@ -16,28 +16,46 @@ export const ProjectCard = (props: ProjectCardProps) => {
           + '  w-full flex flex-col text-darkBlue ',
         className,
       )}
+      aria-label={`${project.name} project`}
+      role="presentation"
     >
       <div className="p-4 flex flex-col gap-2 justify-between h-full">
         <div className="flex justify-between items-center">
-          <span className="text-xl lg:text-2xl">{project.name}</span>
-          <div className="flex gap-2">
+          <span aria-label="project" role="presentation" className="text-xl lg:text-2xl">
+            {project.name}
+          </span>
+          <div className="flex gap-2" />
+        </div>
+        <span aria-label="project description" role="presentation" className="text-sm md:text-base">
+          {project.description}
+        </span>
+
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-8 ">
             {project.githubUrl && (
-              <a href={project.githubUrl} target="_blank" rel="noreferrer">
+              <a
+                href={project.githubUrl}
+                aria-label={`link to codebase for project ${project.name}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <AiFillGithub className="text-2xl" />
               </a>
             )}
             {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noreferrer">
-                <span className="text-xl">Visit</span>
+              <a
+                href={project.liveUrl}
+                aria-label={`link to live deployment for project ${project.name}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="text-xl">Live</span>
               </a>
             )}
           </div>
-        </div>
-        <span className="text-sm md:text-base">{project.description}</span>
-        <div className="flex flex-col gap-2">
-          <div className="flex flex-wrap">
+          <div aria-label="technologies used in project" className="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
-              <span className="text-xs text-darkBlue rounded-md px-2 py-1" key={tech}>
+              <span className="text-xs text-darkBlue rounded-md " key={tech}>
                 {tech}
               </span>
             ))}
