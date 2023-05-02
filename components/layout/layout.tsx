@@ -1,13 +1,14 @@
-import { PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Navbar } from './navbar';
 import { Footer } from './footer';
 
 export const Layout = (props: PropsWithChildren) => {
+  const { children } = props;
   return (
     <div>
-      {/*<Header />*/}
+      {/* <Header /> */}
       <Navbar />
-      {props.children}
+      {children}
       <Footer />
     </div>
   );

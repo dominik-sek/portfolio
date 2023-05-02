@@ -1,6 +1,6 @@
-import { Section } from '../../shared/section';
+import React, { useEffect, useState } from 'react';
+import { Section } from '../../shared';
 import { OutlinedText } from '../../typography/outlined-text';
-import { useEffect, useState } from 'react';
 import { ProjectGrid } from './project-grid';
 
 export const Projects = () => {
@@ -56,14 +56,14 @@ export const Projects = () => {
   }, []);
 
   return (
-    <Section className={'overflow-x-hidden'}>
-      <div className={'flex flex-col pb-12 '}>
-        <OutlinedText className={'text-4xl'} noHover>
+    <Section className="overflow-x-hidden">
+      <div className="flex flex-col pb-12 ">
+        <OutlinedText className="text-4xl" noHover>
           Projects
         </OutlinedText>
       </div>
-      {/*<Blob className={'bg-yellow/30 top-1/2 right-1/2 translate-x-1/2 w-80 h-80 '} />*/}
-      {/*<Blob className={'bg-darkBlue top-1/3 left-0'} />*/}
+      {/* <Blob className={'bg-yellow/30 top-1/2 right-1/2 translate-x-1/2 w-80 h-80 '} /> */}
+      {/* <Blob className={'bg-darkBlue top-1/3 left-0'} /> */}
       <ProjectGrid projects={projectList} />
     </Section>
   );

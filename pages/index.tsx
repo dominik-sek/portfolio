@@ -1,15 +1,14 @@
+import React from 'react';
 import type { NextPage } from 'next';
 import { Hero, Projects } from '../components/sections';
 
-const Home: NextPage = () => {
-  return (
-    <main>
-      <Hero />
-      {/*<About />*/}
-      <Projects />
-      {/*<Contact />*/}
-    </main>
-  );
-};
+const Home: NextPage = () => (
+  <main>
+    <Hero />
+    {/* <About /> */}
+    <Projects />
+    {/* <Contact /> */}
+  </main>
+);
 
 export default Home;

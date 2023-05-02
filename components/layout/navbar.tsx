@@ -1,11 +1,12 @@
 'use client';
-// ^ in order to use framer motion on the server side, we need to add this line
+
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { OutlinedText } from '../typography/outlined-text';
-import { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
+
 import { AiFillGithub } from 'react-icons/ai';
 import { createPortal } from 'react-dom';
+import { OutlinedText } from '../typography/outlined-text';
 
 const routes = [
   {
@@ -52,35 +53,47 @@ const listVariants = {
   },
 };
 
-const Overlay = (setIsOpen: Dispatch<SetStateAction<boolean>>) => {
-  return <div onClick={() => setIsOpen(false)} className={'fixed top-0 left-0 w-full h-full bg-black/40 z-0'}></div>;
-};
+const Overlay = (setIsOpen: Dispatch<SetStateAction<boolean>>) => (
+  <div role="none" onClick={() => setIsOpen(false)} className="fixed top-0 left-0 w-full h-full bg-black/40 z-0" />
+);
 
 export const Navbar = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const handleEscape = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setIsOpen(false);
+    }
+  };
   return (
-    <div className={clsx('flex flex-col fixed items-end w-full z-50 backdrop-blur-md ')}>
-      <div className={'flex flex-col gap-y-2 z-10 px-3 py-6 cursor-pointer'} onClick={() => setIsOpen(!isOpen)}>
+    <div
+      role="none"
+      onKeyDown={handleEscape}
+      className={clsx('flex flex-col fixed items-end w-full z-50 backdrop-blur-md shadow ')}
+    >
+      <button
+        type="button"
+        className="flex flex-col gap-y-2 z-10 px-3 py-6 cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span
           className={clsx(
             'w-12 h-1 rounded-md block bg-lightBlue duration-200 ',
             isOpen && 'rotate-45 translate-y-2 !bg-darkBlue'
           )}
-        ></span>
+        />
         <span
           className={clsx(
             'w-12 h-1 rounded-md block bg-lightBlue duration-500 opacity-100 ',
             isOpen && 'translate-x-full opacity-0 scale-0'
           )}
-        ></span>
+        />
         <span
           className={clsx(
             'w-12 h-1 rounded-md block bg-lightBlue duration-200  ',
             isOpen && '-rotate-45 -translate-y-4 !bg-darkBlue'
           )}
-        ></span>
-      </div>
+        />
+      </button>
       <nav
         className={clsx(
           'flex flex-col absolute gap-6 text-right px-6 pt-20 pb-10 bg-gray-300 w-full -translate-y-full duration-700 transition-all',
@@ -89,24 +102,24 @@ export const Navbar = (): JSX.Element => {
       >
         <motion.ul
           className={clsx('flex flex-col gap-6')}
-          initial={'hidden'}
+          initial="hidden"
           animate={isOpen ? 'visible' : 'hidden'}
           variants={variants}
         >
-          {routes.map((route, index) => (
-            <motion.li key={index} variants={listVariants}>
+          {routes.map((route) => (
+            <motion.li key={route.name} variants={listVariants}>
               <OutlinedText>{route.name}</OutlinedText>
             </motion.li>
           ))}
         </motion.ul>
 
         <motion.span
-          className={'flex justify-end'}
-          initial={'hidden'}
+          className="flex justify-end"
+          initial="hidden"
           animate={isOpen ? 'visible' : 'hidden'}
           variants={variants}
         >
-          <AiFillGithub className={'h-10 w-8 text-darkBlue hover:text-blue-950 cursor-pointer'} />
+          <AiFillGithub className="h-10 w-8 text-darkBlue hover:text-blue-950 cursor-pointer" />
         </motion.span>
       </nav>
 
