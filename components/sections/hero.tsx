@@ -12,14 +12,24 @@ export const Hero = () => (
         <div>
           <h1 className="text-5xl md:text-7xl text-white font-semibold">Dominik.</h1>
           <h2 className="text-[1.75rem] md:text-4xl font-sans ">
-            I&apos;m a <span className="text-yellow">frontend</span> developer.
+            I&apos;m a
+            {' '}
+            <span className="text-yellow">frontend</span>
+            {' '}
+            developer.
           </h2>
         </div>
 
         <div className="w-4/5">
           <span className="md:text-xl">
-            Currently focused on expanding my knowledge of <span className="text-yellow">backend</span> development and{' '}
-            <span className="text-yellow">design</span>.
+            Currently focused on expanding my knowledge of
+            {' '}
+            <span className="text-yellow">backend</span>
+            {' '}
+            development and
+            {' '}
+            <span className="text-yellow">design</span>
+            .
           </span>
         </div>
       </div>

@@ -78,26 +78,26 @@ export const Navbar = (): JSX.Element => {
         <span
           className={clsx(
             'w-12 h-1 rounded-md block bg-lightBlue duration-200 ',
-            isOpen && 'rotate-45 translate-y-2 !bg-darkBlue'
+            isOpen && 'rotate-45 translate-y-2 !bg-darkBlue',
           )}
         />
         <span
           className={clsx(
             'w-12 h-1 rounded-md block bg-lightBlue duration-500 opacity-100 ',
-            isOpen && 'translate-x-full opacity-0 scale-0'
+            isOpen && 'translate-x-full opacity-0 scale-0',
           )}
         />
         <span
           className={clsx(
             'w-12 h-1 rounded-md block bg-lightBlue duration-200  ',
-            isOpen && '-rotate-45 -translate-y-4 !bg-darkBlue'
+            isOpen && '-rotate-45 -translate-y-4 !bg-darkBlue',
           )}
         />
       </button>
       <nav
         className={clsx(
           'flex flex-col absolute gap-6 text-right px-6 pt-20 pb-10 bg-gray-300 w-full -translate-y-full duration-700 transition-all',
-          isOpen && 'translate-y-0'
+          isOpen && 'translate-y-0',
         )}
       >
         <motion.ul

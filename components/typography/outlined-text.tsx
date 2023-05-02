@@ -8,7 +8,9 @@ interface OutlinedTextProps extends PropsWithChildren {
 }
 
 export const OutlinedText = (props: OutlinedTextProps): JSX.Element => {
-  const { as, className, noHover, children } = props;
+  const {
+    as, className, noHover, children,
+  } = props;
   const baseClasses = `text-stroke-blue text-transparent duration-100 font-black text-5xl ${
     noHover ? '' : 'hover:text-darkBlue cursor-pointer'
   }`;

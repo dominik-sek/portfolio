@@ -12,9 +12,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
     <div
       key={project.id}
       className={clsx(
-        'rounded-md bg-gray-300 bg-clip-padding backdrop-filter backdrop-blur-5xl bg-opacity-10 border border-darkBlue/20 shadow-md ' +
-          '  w-full flex flex-col text-darkBlue ',
-        className
+        'rounded-md bg-gray-300 bg-clip-padding backdrop-filter backdrop-blur-5xl bg-opacity-10 border border-darkBlue/20 shadow-md '
+          + '  w-full flex flex-col text-darkBlue ',
+        className,
       )}
     >
       <div className="p-4 flex flex-col gap-2 justify-between h-full">
