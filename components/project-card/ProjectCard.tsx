@@ -1,6 +1,9 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useState } from 'react';
 import clsx from 'clsx';
 import { AiFillGithub } from 'react-icons/ai';
+import { createPortal } from 'react-dom';
+import { Overlay } from '../shared/overlay';
+import { Modal } from '../shared/modal';
 
 interface ProjectCardProps extends HTMLAttributes<HTMLDivElement> {
   project: Project;
@@ -8,6 +11,7 @@ interface ProjectCardProps extends HTMLAttributes<HTMLDivElement> {
 
 export const ProjectCard = (props: ProjectCardProps) => {
   const { project, className } = props;
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <div
       key={project.id}
@@ -19,6 +23,10 @@ export const ProjectCard = (props: ProjectCardProps) => {
       aria-label={`${project.name} project`}
       role="presentation"
     >
+      {/* onClick={() => setModalOpen(!modalOpen)} */}
+      {modalOpen && createPortal(Overlay(setModalOpen, 'z-[99]'), document.body)}
+      {modalOpen && createPortal(Modal(project, setModalOpen), document.body)}
+
       <div className="p-4 flex flex-col gap-2 justify-between h-full">
         <div className="flex justify-between items-center">
           <span aria-label="project" role="presentation" className="text-xl lg:text-2xl">
@@ -26,10 +34,25 @@ export const ProjectCard = (props: ProjectCardProps) => {
           </span>
           <div className="flex gap-2" />
         </div>
-        <span aria-label="project description" role="presentation" className="text-sm md:text-base">
-          {project.description}
-        </span>
-
+        <div className="py-4">
+          <span
+            aria-label="project description"
+            role="presentation"
+            className="text-base text-ellipsis overflow-hidden line-clamp-3"
+          >
+            {project.description}
+          </span>
+          {project.description.split('\n').length > 0 && (
+            <button
+              type="button"
+              aria-label="expand project description"
+              className="text-sm text-darkBlue underline"
+              onClick={() => setModalOpen(!modalOpen)}
+            >
+              Read More
+            </button>
+          )}
+        </div>
         <div className="flex flex-col gap-2">
           <div className="flex gap-8 ">
             {project.githubUrl && (
@@ -38,8 +61,10 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 aria-label={`link to codebase for project ${project.name}`}
                 target="_blank"
                 rel="noreferrer"
+                className="flex gap-2"
               >
                 <AiFillGithub className="text-2xl" />
+                Source
               </a>
             )}
             {project.liveUrl && (

@@ -11,9 +11,9 @@ export const ProjectGrid = (props: ProjectGridProps) => {
   return (
     <div
       className={
-        'grid min-h-screen p-2 '
+        'grid  p-2 '
         + 'md:grid-cols-6 md:grid-rows-6 md:grid-flow-col '
-        + 'lg:grid-cols-5 lg:!grid-rows-6 lg:grid-flow-col-dense gap-5'
+        + 'lg:grid-cols-5 lg:!grid-rows-6 lg:grid-flow-row-dense gap-5'
       }
     >
       {projects.slice(0, 6).map((project) => (

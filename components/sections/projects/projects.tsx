@@ -10,7 +10,11 @@ export const Projects = () => {
       {
         id: 1,
         name: 'University Management',
-        description: '',
+        description:
+          ''
+          + 'A fullstack application that serves as a CMS platform for universities.'
+          + ' Provides a way to manage students, courses, grades as well as a way to communicate with students via a chat. '
+          + ' The application is fully responsive and supports multiple languages. Integrated with various APIs, hosted on a VPS.',
         imageUrl: 'https://github.com/gothic459/um-client/blob/main/images/messages.png',
         liveUrl: 'https://um.dominiksek.com',
         status: 'Completed',
@@ -27,40 +31,37 @@ export const Projects = () => {
           'Nginx',
           'Git',
         ],
-        githubUrl: 'https://www.github.com',
+        githubUrl: 'https://www.github.com/gothic459/um-client',
         starred: true,
       },
       {
         id: 2,
-        name: 'Project 2',
-        description: 'This is a description of project 1',
-        imageUrl: 'https://via.placeholder.com/150',
-        liveUrl: 'https://www.google.com',
-        status: 'In Progress',
-        technologies: ['React', 'Typescript', 'TailwindCSS'],
-        githubUrl: 'https://www.github.com',
-        starred: false,
-      },
-      {
-        id: 3,
-        name: 'Project 3',
-        description: 'This is a description of project 1',
-        imageUrl: 'https://via.placeholder.com/150',
-        liveUrl: 'https://www.google.com',
-        status: 'In Progress',
-        technologies: ['React', 'Typescript', 'TailwindCSS'],
-        githubUrl: 'https://www.github.com',
+        name: '"Fuel Lang" and its Interpreter',
+        description:
+          'This is a project that I made for one of my university courses.'
+          + 'It is a custom Domain Specific Language (DSL) for writing programs that allow to monitor a fuel storage facility.'
+          + ' I was responsible for creating the grammar of the language, a custom visitor that traverses the Abstract Syntax Tree (AST) and interprets the program,'
+          + ' and a React application that allows to write and run programs written in the language.',
+        imageUrl: 'https://i.imgur.com/LVvgt5t.png',
+        liveUrl: 'https://gothic459.github.io/fuel-lang/',
+        status: 'Completed',
+        technologies: ['React', 'Typescript', 'ANTLR'],
+        githubUrl: 'https://github.com/gothic459/fuel-lang',
         starred: true,
       },
       {
-        id: 4,
-        name: 'Project 4',
-        description: 'This is a description of project 1',
-        imageUrl: 'https://via.placeholder.com/150',
-        liveUrl: 'https://www.google.com',
-        status: 'In Progress',
-        technologies: ['React', 'Typescript', 'TailwindCSS'],
-        githubUrl: 'https://www.github.com',
+        id: 3,
+        name: 'Ostoya-Dziwnówek',
+        description:
+          'One of the projects that I was responsible for during my internship at "UPBRAND" company.'
+          + ' Given a figma desing, I, alongside my teammate were responsible for creating a website for a seaside apartment complex. '
+          + 'The website is fully responsive and was created using React and TailwindCSS.'
+          + 'During the development process our code was constantly under code review which ensured the quality of it.',
+        imageUrl: 'https://i.imgur.com/imH03yx.png',
+        liveUrl: 'https://ostoya-dziwnowek.pl/',
+        status: 'Completed',
+        technologies: ['React', 'Typescript', 'TailwindCSS', 'Git'],
+        // githubUrl: 'https://www.github.com',
         starred: false,
       },
     ]);

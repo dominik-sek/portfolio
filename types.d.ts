@@ -5,7 +5,7 @@ interface Project {
   description: string;
   status: ProjectStatus;
   liveUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
   imageUrl: string;
   technologies: string[];
   starred: boolean;

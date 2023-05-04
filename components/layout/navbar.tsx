@@ -2,12 +2,11 @@
 
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import React, {
-  Dispatch, SetStateAction, useEffect, useState,
-} from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { createPortal } from 'react-dom';
 import { OutlinedText } from '../typography/outlined-text';
+import { Overlay } from '../shared/overlay';
 
 const routes = [
   {
@@ -53,10 +52,6 @@ const listVariants = {
     y: 0,
   },
 };
-
-const Overlay = (setIsOpen: Dispatch<SetStateAction<boolean>>) => (
-  <div role="none" onClick={() => setIsOpen(false)} className="fixed top-0 left-0 w-full h-full bg-black/40 z-40" />
-);
 
 export const Navbar = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
