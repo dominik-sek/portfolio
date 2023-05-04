@@ -4,6 +4,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { createPortal } from 'react-dom';
 import { Overlay } from '../shared/overlay';
 import { Modal } from '../shared/modal';
+import { Button } from '../shared/button';
 
 interface ProjectCardProps extends HTMLAttributes<HTMLDivElement> {
   project: Project;
@@ -54,7 +55,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
           )}
         </div>
         <div className="flex flex-col gap-2">
-          <div className="flex gap-8 ">
+          <div aria-label="technologies used in project" className="flex flex-wrap gap-2">
+            {project.technologies.map((tech) => (
+              <span className="text-xs text-darkBlue rounded-md " key={tech}>
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-8 justify-end items-center ">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -63,8 +71,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 rel="noreferrer"
                 className="flex gap-2"
               >
-                <AiFillGithub className="text-2xl" />
-                Source
+                <Button className="w-24" icon={<AiFillGithub className="text-2xl" />}>
+                  Source
+                </Button>
               </a>
             )}
             {project.liveUrl && (
@@ -74,16 +83,9 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="text-xl">Live</span>
+                <Button className="w-24">Live</Button>
               </a>
             )}
-          </div>
-          <div aria-label="technologies used in project" className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <span className="text-xs text-darkBlue rounded-md " key={tech}>
-                {tech}
-              </span>
-            ))}
           </div>
         </div>
       </div>
