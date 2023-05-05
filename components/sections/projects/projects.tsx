@@ -15,7 +15,10 @@ export const Projects = () => {
           + 'A fullstack application that serves as a CMS platform for universities.'
           + ' Provides a way to manage students, courses, grades as well as a way to communicate with students via a chat. '
           + ' The application is fully responsive and supports multiple languages. Integrated with various APIs, hosted on a VPS.',
-        imageUrl: 'https://github.com/gothic459/um-client/blob/main/images/messages.png',
+        images: [{
+          src: 'https://github.com/gothic459/um-client/blob/main/images/messages.png',
+          alt: 'University Management',
+        }],
         liveUrl: 'https://um.dominiksek.com',
         status: 'Completed',
         technologies: [
@@ -42,7 +45,10 @@ export const Projects = () => {
           + 'It is a custom Domain Specific Language (DSL) for writing programs that allow to monitor a fuel storage facility.'
           + ' I was responsible for creating the grammar of the language, a custom visitor that traverses the Abstract Syntax Tree (AST) and interprets the program,'
           + ' and a React application that allows to write and run programs written in the language.',
-        imageUrl: 'https://i.imgur.com/LVvgt5t.png',
+        images: [{
+          src: 'https://i.imgur.com/LVvgt5t.png',
+          alt: 'Fuel Lang',
+        }],
         liveUrl: 'https://gothic459.github.io/fuel-lang/',
         status: 'Completed',
         technologies: ['React', 'Typescript', 'ANTLR'],
@@ -57,7 +63,12 @@ export const Projects = () => {
           + ' Given a figma desing, I, alongside my teammate were responsible for creating a website for a seaside apartment complex. '
           + 'The website is fully responsive and was created using React and TailwindCSS.'
           + 'During the development process our code was constantly under code review which ensured the quality of it.',
-        imageUrl: 'https://i.imgur.com/imH03yx.png',
+        images: [
+          {
+            src: 'https://i.imgur.com/imH03yx.png',
+            alt: 'Ostoya-Dziwnówek',
+          },
+        ],
         liveUrl: 'https://ostoya-dziwnowek.pl/',
         status: 'Completed',
         technologies: ['React', 'Typescript', 'TailwindCSS', 'Git'],

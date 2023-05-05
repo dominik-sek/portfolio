@@ -2,6 +2,7 @@ import React, { HTMLAttributes, useState } from 'react';
 import clsx from 'clsx';
 import { AiFillGithub } from 'react-icons/ai';
 import { createPortal } from 'react-dom';
+import { AnimatePresence } from 'framer-motion';
 import { Overlay } from '../shared/overlay';
 import { Modal } from '../shared/modal';
 import { Button } from '../shared/button';
@@ -26,7 +27,12 @@ export const ProjectCard = (props: ProjectCardProps) => {
     >
       {/* onClick={() => setModalOpen(!modalOpen)} */}
       {modalOpen && createPortal(Overlay(setModalOpen, 'z-[99]'), document.body)}
-      {modalOpen && createPortal(Modal(project, setModalOpen), document.body)}
+      {modalOpen && createPortal(
+        <AnimatePresence mode="wait">
+          {Modal(project, setModalOpen)}
+        </AnimatePresence>,
+        document.body,
+      )}
 
       <div className="p-4 flex flex-col gap-2 justify-between h-full">
         <div className="flex justify-between items-center">
@@ -62,8 +68,11 @@ export const ProjectCard = (props: ProjectCardProps) => {
               </span>
             ))}
           </div>
-          <div className="flex gap-8 justify-end items-center ">
-            {project.githubUrl && (
+
+          <div className="flex justify-between">
+
+            <div className="flex gap-2">
+              {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 aria-label={`link to codebase for project ${project.name}`}
@@ -71,21 +80,25 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 rel="noreferrer"
                 className="flex gap-2"
               >
-                <Button className="w-24" icon={<AiFillGithub className="text-2xl" />}>
+                <Button icon={<AiFillGithub className="text-2xl" />}>
                   Source
                 </Button>
               </a>
-            )}
-            {project.liveUrl && (
+              )}
+              {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 aria-label={`link to live deployment for project ${project.name}`}
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button className="w-24">Live</Button>
+                <Button>Live</Button>
               </a>
-            )}
+              )}
+            </div>
+            <div className="flex">
+              <Button outlined onClick={() => setModalOpen(!modalOpen)}>Details</Button>
+            </div>
           </div>
         </div>
       </div>
