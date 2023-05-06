@@ -15,9 +15,9 @@ export const Button = (props: ButtonProps): JSX.Element => {
     <button
       type="button"
       className={clsx(
-        'flex justify-center bg-lightBlue text-darkBlue rounded-md items-center py-2 w-full h-full px-6 text-base font-bold shadow-md hover:bg-darkBlue hover:text-lightBlue duration-200 ',
+        'flex justify-center flex-1 bg-lightBlue border border-darkBlue text-darkBlue rounded-md items-center py-2 h-full w-32 max-w-[8rem] px-6 text-base font-bold shadow-md hover:bg-darkBlue hover:text-lightBlue duration-200 ',
         className,
-        outlined && 'bg-transparent border border-darkBlue text-darkBlue hover:bg-darkBlue hover:text-lightBlue',
+        outlined && 'bg-transparent text-darkBlue hover:bg-darkBlue hover:text-lightBlue',
       )}
       {...rest}
     >

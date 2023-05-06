@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 import Image from 'next/image';
 
 export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<boolean>>) => {
-  const { images } = project;
+  const { images, name, description } = project;
   const variants = {
     hidden: {
       opacity: 0,
@@ -29,36 +29,46 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
   return (
     <motion.div
       key="modal"
-      className="aspect-video w-full h-full md:w-4/5 md:h-3/4 fixed top-1/2 left-1/2 bg-gray-200 rounded-md z-[100] shadow-2xl p-6 flex flex-col"
+      className=" w-full h-full overflow-y-auto md:w-3/5 md:h-3/4 fixed top-1/2 left-1/2 bg-gray-200 rounded-md z-[100] shadow-2xl p-6 flex flex-col gap-6"
       initial="hidden"
       animate="visible"
       exit="hidden"
       variants={variants}
     >
-      <div className="w-full bg-red-700 ">
-        Header
+      <button type="button" className="absolute top-0 right-0 p-2" onClick={() => setModalOpen(false)}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-12 w-12 text-lightBlue hover:text-darkBlue transition-all duration-300"
+          fill="none"
+          viewBox="0 0 36 36"
+          stroke="currentColor"
+        >
+          <path d="M6 18L18 6M6 6l12 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      <div className="w-full gap-2 flex flex-col">
+        <h2 className="text-2xl font-bold text-center text-darkBlue">{name}</h2>
+        <p className="text-base text-center text-darkBlue">{description}</p>
       </div>
-      <div className="w-full bg-lime-300">
+
+      <div id="swiper-container" className="w-full h-full">
         <Swiper
-          className="h-full"
+          className="h-full w-full"
           slidesPerView={1}
           spaceBetween={0}
           navigation
           pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          {images && images.map((image) => (
-            <SwiperSlide key={image.src} className="flex items-center">
-              <img src={image.src} alt={image.alt} className="object-fill w-full" />
-            </SwiperSlide>
-          ))}
+          {images
+            && images.map((image) => (
+              <SwiperSlide key={image.src} className="flex items-center">
+                <Image src={image.src} alt={image.alt} fill className="object-contain w-full " />
+              </SwiperSlide>
+            ))}
         </Swiper>
-
-      </div>
-      <div className="w-full bg-darkBlue">
-        Footer
       </div>
     </motion.div>
   );

@@ -27,19 +27,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
     >
       {/* onClick={() => setModalOpen(!modalOpen)} */}
       {modalOpen && createPortal(Overlay(setModalOpen, 'z-[99]'), document.body)}
-      {modalOpen && createPortal(
-        <AnimatePresence mode="wait">
-          {Modal(project, setModalOpen)}
-        </AnimatePresence>,
-        document.body,
-      )}
+      {modalOpen
+        && createPortal(<AnimatePresence mode="wait">{Modal(project, setModalOpen)}</AnimatePresence>, document.body)}
 
       <div className="p-4 flex flex-col gap-2 justify-between h-full">
         <div className="flex justify-between items-center">
           <span aria-label="project" role="presentation" className="text-xl lg:text-2xl">
             {project.name}
           </span>
-          <div className="flex gap-2" />
         </div>
         <div className="py-4">
           <span
@@ -69,23 +64,19 @@ export const ProjectCard = (props: ProjectCardProps) => {
             ))}
           </div>
 
-          <div className="flex justify-between">
-
-            <div className="flex gap-2">
-              {project.githubUrl && (
+          <div className="flex flex-wrap justify-center gap-2">
+            {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 aria-label={`link to codebase for project ${project.name}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex gap-2"
+                className=""
               >
-                <Button icon={<AiFillGithub className="text-2xl" />}>
-                  Source
-                </Button>
+                <Button icon={<AiFillGithub className="text-2xl" />}>Source</Button>
               </a>
-              )}
-              {project.liveUrl && (
+            )}
+            {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 aria-label={`link to live deployment for project ${project.name}`}
@@ -94,11 +85,10 @@ export const ProjectCard = (props: ProjectCardProps) => {
               >
                 <Button>Live</Button>
               </a>
-              )}
-            </div>
-            <div className="flex">
-              <Button outlined onClick={() => setModalOpen(!modalOpen)}>Details</Button>
-            </div>
+            )}
+            <Button className="h-auto" outlined onClick={() => setModalOpen(!modalOpen)}>
+              Details
+            </Button>
           </div>
         </div>
       </div>
