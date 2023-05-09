@@ -5,9 +5,13 @@ import 'swiper/css/bundle';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Image from 'next/image';
+import { AiFillGithub } from 'react-icons/ai';
+import { Button } from './button';
 
 export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<boolean>>) => {
-  const { images, name, description } = project;
+  const {
+    images, name, description, githubUrl, liveUrl,
+  } = project;
   const variants = {
     hidden: {
       opacity: 0,
@@ -29,7 +33,11 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
   return (
     <motion.div
       key="modal"
-      className=" w-full h-full overflow-y-auto md:w-3/5 md:h-3/4 fixed top-1/2 left-1/2 bg-gray-200 rounded-md z-[100] shadow-2xl p-6 flex flex-col gap-6"
+      className={
+        'w-full h-full overflow-y-auto md:w-3/5 md:h-3/4 fixed top-1/2 left-1/2 '
+        + 'bg-gray-200 rounded-md z-[100] shadow-2xl p-6 flex flex-col gap-6 '
+        + 'scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 scrollbar-thumb-rounded-full'
+      }
       initial="hidden"
       animate="visible"
       exit="hidden"
@@ -52,9 +60,9 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
         <p className="text-base text-center text-darkBlue">{description}</p>
       </div>
 
-      <div id="swiper-container" className="w-full h-full">
+      <div id="swiper-container" className="w-full">
         <Swiper
-          className="h-full w-full"
+          className="h-fit w-full flex items-center justify-center"
           slidesPerView={1}
           spaceBetween={0}
           navigation
@@ -64,11 +72,29 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
         >
           {images
             && images.map((image) => (
-              <SwiperSlide key={image.src} className="flex items-center">
-                <Image src={image.src} alt={image.alt} fill className="object-contain w-full " />
+              <SwiperSlide key={image.src} className="!flex items-center justify-center">
+                <Image src={image.src} alt={image.alt} width={700} height={700} />
               </SwiperSlide>
             ))}
         </Swiper>
+      </div>
+      <div className="flex flex-wrap justify-center gap-2">
+        {githubUrl && (
+          <a
+            href={githubUrl}
+            aria-label={`link to codebase for project ${name}`}
+            target="_blank"
+            rel="noreferrer"
+            className=""
+          >
+            <Button icon={<AiFillGithub className="text-2xl" />}>Source</Button>
+          </a>
+        )}
+        {liveUrl && (
+          <a href={liveUrl} aria-label={`link to live deployment for project ${name}`} target="_blank" rel="noreferrer">
+            <Button>Live</Button>
+          </a>
+        )}
       </div>
     </motion.div>
   );
