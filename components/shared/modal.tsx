@@ -67,8 +67,6 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
           spaceBetween={0}
           navigation
           pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
         >
           {images
             && images.map((image) => (

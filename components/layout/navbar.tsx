@@ -21,10 +21,6 @@ const routes = [
     name: 'About',
     href: '#',
   },
-  {
-    name: 'Contact',
-    href: '#',
-  },
 ];
 const variants = {
   hidden: {
@@ -129,7 +125,9 @@ export const Navbar = (): JSX.Element => {
           animate={isOpen ? 'visible' : 'hidden'}
           variants={variants}
         >
-          <AiFillGithub className="h-10 w-8 text-darkBlue hover:text-blue-950 cursor-pointer" />
+          <a href="https://github.com/gothic459" target="_blank" rel="noreferrer" className="flex items-center gap-2">
+            <AiFillGithub className="h-10 w-8 text-darkBlue hover:text-blue-950 cursor-pointer" />
+          </a>
         </motion.span>
       </nav>
 

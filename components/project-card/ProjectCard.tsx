@@ -86,7 +86,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 <Button>Live</Button>
               </a>
             )}
-            <Button className="h-auto" outlined onClick={() => setModalOpen(!modalOpen)}>
+            <Button className="h-min" outlined onClick={() => setModalOpen(!modalOpen)}>
               Details
             </Button>
           </div>

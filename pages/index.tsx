@@ -7,7 +7,6 @@ const Home: NextPage = () => (
     <Hero />
     <Projects />
     <About />
-    {/* <Contact /> */}
   </main>
 );
 
