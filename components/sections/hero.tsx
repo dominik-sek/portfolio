@@ -2,7 +2,7 @@ import React from 'react';
 import { Blob, Section } from '../shared';
 
 export const Hero = () => (
-  <Section className="h-screen backdrop-blur-2xl overflow-hidden cursor-default">
+  <Section id="home" className="h-screen backdrop-blur-2xl overflow-hidden cursor-default">
     <Blob className="bg-lightBlue/10 -top-1/4 left-0 !w-1/2" />
     <Blob className="bg-lightBlue/30 bottom-0 right-0 rotate-180 w-52 !overflow-hidden" />
 

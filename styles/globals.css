@@ -25,3 +25,8 @@
     -webkit-text-stroke: 2px rgb(229, 231, 235);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}

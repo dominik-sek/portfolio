@@ -7,21 +7,8 @@ import { AiFillGithub } from 'react-icons/ai';
 import { createPortal } from 'react-dom';
 import { OutlinedText } from '../typography/outlined-text';
 import { Overlay } from '../shared/overlay';
+import { routes } from '../../constants/routes';
 
-const routes = [
-  {
-    name: 'Home',
-    href: '#',
-  },
-  {
-    name: 'Projects',
-    href: '#',
-  },
-  {
-    name: 'About',
-    href: '#',
-  },
-];
 const variants = {
   hidden: {
     opacity: 0,
@@ -112,7 +99,7 @@ export const Navbar = (): JSX.Element => {
         >
           {routes.map((route) => (
             <motion.li key={route.name} variants={listVariants}>
-              <a href={route.href}>
+              <a href={route.href} onClick={() => setIsOpen(false)}>
                 <OutlinedText>{route.name}</OutlinedText>
               </a>
             </motion.li>
