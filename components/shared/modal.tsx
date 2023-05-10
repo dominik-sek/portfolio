@@ -78,20 +78,28 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
       </div>
       <div className="flex flex-wrap justify-center gap-2">
         {githubUrl && (
-          <a
+          <Button
+            as="a"
             href={githubUrl}
             aria-label={`link to codebase for project ${name}`}
             target="_blank"
             rel="noreferrer"
             className=""
+            icon={<AiFillGithub className="text-2xl" />}
           >
-            <Button icon={<AiFillGithub className="text-2xl" />}>Source</Button>
-          </a>
+            Source
+          </Button>
         )}
         {liveUrl && (
-          <a href={liveUrl} aria-label={`link to live deployment for project ${name}`} target="_blank" rel="noreferrer">
-            <Button>Live</Button>
-          </a>
+          <Button
+            as="a"
+            href={liveUrl}
+            aria-label={`link to live deployment for project ${name}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Live
+          </Button>
         )}
       </div>
     </motion.div>

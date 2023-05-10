@@ -66,25 +66,28 @@ export const ProjectCard = (props: ProjectCardProps) => {
 
           <div className="flex flex-wrap justify-center gap-2">
             {project.githubUrl && (
-              <a
+              <Button
+                as="a"
+                icon={<AiFillGithub className="text-2xl" />}
                 href={project.githubUrl}
                 aria-label={`link to codebase for project ${project.name}`}
                 target="_blank"
                 rel="noreferrer"
                 className=""
               >
-                <Button icon={<AiFillGithub className="text-2xl" />}>Source</Button>
-              </a>
+                Source
+              </Button>
             )}
             {project.liveUrl && (
-              <a
+              <Button
+                as="a"
                 href={project.liveUrl}
                 aria-label={`link to live deployment for project ${project.name}`}
                 target="_blank"
                 rel="noreferrer"
               >
-                <Button>Live</Button>
-              </a>
+                Live
+              </Button>
             )}
             <Button className="h-min" outlined onClick={() => setModalOpen(!modalOpen)}>
               Details
