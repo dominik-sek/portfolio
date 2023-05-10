@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">University Management</h1><a name = "readme-top"></a>
+<div align="center">
+  <a href="https://um.dominiksek.com">Live preview</a>
+</div>
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+  [![Status](https://img.shields.io/badge/status-active-success.svg)](dominiksek.com) 
+  [![GitHub Issues](https://img.shields.io/github/issues/gothic459/portfolio)](https://github.com/gothic459/portfolio/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/gothic459/portfolio)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 Table of Contents
+- [About](#about)
+- [Built Using](#built_using)
+- [Authors](#authors)
+- [Contact](#contact)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🧐 About <a name = "about"></a>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+My most recent portfolio site
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## ⛏️ Built Using <a name = "built_using"></a>
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js
+- TypeScript
+- TailwindCSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## ✍️ Authors <a name = "authors"></a>
 
-## Deploy on Vercel
+- [@gothic459](https://github.com/gothic459)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📞 Contact <a name = "contact"></a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Dominik Sęk - [@gothic459](https://github.com/gothic459) |  [email](d.sek464@gmail.com)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
