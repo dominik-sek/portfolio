@@ -1,6 +1,6 @@
 <h1 align="center">University Management</h1><a name = "readme-top"></a>
 <div align="center">
-  <a href="https://um.dominiksek.com">Live preview</a>
+  <a href="https://dominiksek.com">Live preview</a>
 </div>
 
 <div align="center">
