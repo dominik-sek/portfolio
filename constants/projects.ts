@@ -9,7 +9,7 @@ export const projects: Project[] = [
       + ' The application is fully responsive and supports multiple languages. Integrated with various APIs, hosted on a VPS.',
     images: [
       {
-        src: 'https://raw.githubusercontent.com/gothic459/um-client/main/images/messages.png',
+        src: '/project-images/um/1.png',
         alt: 'University Management',
       },
     ],
@@ -41,7 +41,7 @@ export const projects: Project[] = [
       + ' and a React application that allows to write and run programs written in the language.',
     images: [
       {
-        src: 'https://i.imgur.com/LVvgt5t.png',
+        src: '/project-images/fl/1.png',
         alt: 'Fuel Lang',
       },
     ],
@@ -61,7 +61,7 @@ export const projects: Project[] = [
       + 'During the development process our code was constantly under code review which ensured the quality of it.',
     images: [
       {
-        src: 'https://i.imgur.com/imH03yx.png',
+        src: '/project-images/od/1.png',
         alt: 'Ostoya-Dziwnówek',
       },
     ],
