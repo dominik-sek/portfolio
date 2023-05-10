@@ -19,7 +19,7 @@ export const Button = (props: AnchorButtonProps | ButtonButtonProps): JSX.Elemen
     return (
       <a
         className={clsx(
-          'flex justify-center flex-1 bg-lightBlue border border-darkBlue text-darkBlue rounded-md items-center py-2 h-full w-32 max-w-[8rem] px-6 text-base font-bold shadow-md hover:bg-darkBlue hover:text-lightBlue duration-200 ',
+          'flex justify-center flex-1 bg-lightBlue border border-darkBlue text-darkBlue rounded-md items-center py-2 h-fit w-32 max-w-[8rem] px-6 text-base font-bold shadow-md hover:bg-darkBlue hover:text-lightBlue duration-200 ',
           outlined && 'bg-transparent text-darkBlue hover:bg-darkBlue hover:text-lightBlue',
           className,
         )}
@@ -35,7 +35,7 @@ export const Button = (props: AnchorButtonProps | ButtonButtonProps): JSX.Elemen
     <button
       type="button"
       className={clsx(
-        'flex justify-center flex-1 bg-lightBlue border border-darkBlue text-darkBlue rounded-md items-center py-2 h-full w-32 max-w-[8rem] px-6 text-base font-bold shadow-md hover:bg-darkBlue hover:text-lightBlue duration-200 ',
+        'flex justify-center flex-1 bg-lightBlue border border-darkBlue text-darkBlue rounded-md items-center py-2 h-fit w-32 max-w-[8rem] px-6 text-base font-bold shadow-md hover:bg-darkBlue hover:text-lightBlue duration-200 ',
         className,
         outlined && 'bg-transparent text-darkBlue hover:bg-darkBlue hover:text-lightBlue',
       )}
