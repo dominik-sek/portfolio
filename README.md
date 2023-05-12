@@ -1,4 +1,4 @@
-<h1 align="center">University Management</h1><a name = "readme-top"></a>
+<h1 align="center">Portfolio</h1><a name = "readme-top"></a>
 <div align="center">
   <a href="https://dominiksek.com">Live preview</a>
 </div>
