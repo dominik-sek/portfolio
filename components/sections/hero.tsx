@@ -24,9 +24,9 @@ export const Hero = () => (
           <span className="md:text-xl">
             Currently focused on expanding my knowledge of
             {' '}
-            <span className="text-yellow">backend</span>
+            <span className="text-yellow">backend development</span>
             {' '}
-            development and
+            and
             {' '}
             <span className="text-yellow">design</span>
             .
