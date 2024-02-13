@@ -1,5 +1,20 @@
 export const projects: Project[] = [
   {
+    id: 0,
+    name: 'See more on GitHub',
+    description: 'For more projects, visit my GitHub profile.',
+    images: [
+      {
+        src: '/project-images/github.png',
+        alt: 'GitHub',
+      },
+    ],
+    liveUrl: 'https://github.com/dominik-sek',
+    status: 'Completed',
+    technologies: ['React', 'Typescript', 'TailwindCSS', 'Git'],
+    starred: false,
+  },
+  {
     id: 1,
     name: 'University Management',
     description:
@@ -28,7 +43,7 @@ export const projects: Project[] = [
       'Nginx',
       'Git',
     ],
-    githubUrl: 'https://www.github.com/gothic459/um-client',
+    githubUrl: 'https://www.github.com/dominik-sek/um-client',
     starred: true,
   },
   {
@@ -45,10 +60,10 @@ export const projects: Project[] = [
         alt: 'Fuel Lang',
       },
     ],
-    liveUrl: 'https://gothic459.github.io/fuel-lang/',
+    liveUrl: 'https://dominik-sek.github.io/fuel-lang/',
     status: 'Completed',
     technologies: ['React', 'Typescript', 'ANTLR'],
-    githubUrl: 'https://github.com/gothic459/fuel-lang',
+    githubUrl: 'https://github.com/dominik-sek/fuel-lang',
     starred: true,
   },
   {

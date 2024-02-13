@@ -9,17 +9,22 @@ import { Button } from '../shared/button';
 
 interface ProjectCardProps extends HTMLAttributes<HTMLDivElement> {
   project: Project;
+  noDetails?: boolean;
+  noEllipsis?: boolean;
+  liveText?: string;
 }
 
 export const ProjectCard = (props: ProjectCardProps) => {
-  const { project, className } = props;
+  const {
+    project, className, noEllipsis, noDetails, liveText,
+  } = props;
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <div
       key={project.id}
       className={clsx(
         'rounded-md bg-gray-300 bg-clip-padding backdrop-filter backdrop-blur-5xl bg-opacity-10 border border-darkBlue/20 shadow-md '
-          + '  w-full flex flex-col text-darkBlue ',
+          + '  w-full flex flex-col text-darkBlue',
         className,
       )}
       aria-label={`${project.name} project`}
@@ -44,7 +49,8 @@ export const ProjectCard = (props: ProjectCardProps) => {
           >
             {project.description}
           </span>
-          {project.description.split('\n').length > 0 && (
+
+          {!noEllipsis && project.description.split('\n').length >= 0 && (
             <button
               type="button"
               aria-label="expand project description"
@@ -64,7 +70,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-end gap-2">
             {project.githubUrl && (
               <Button
                 as="a"
@@ -86,12 +92,14 @@ export const ProjectCard = (props: ProjectCardProps) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Live
+                {liveText || 'Live'}
               </Button>
             )}
-            <Button className="h-min" outlined onClick={() => setModalOpen(!modalOpen)}>
-              Details
-            </Button>
+            {!noDetails && (
+              <Button className="h-min" outlined onClick={() => setModalOpen(!modalOpen)}>
+                Details
+              </Button>
+            )}
           </div>
         </div>
       </div>

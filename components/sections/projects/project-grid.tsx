@@ -16,7 +16,7 @@ export const ProjectGrid = (props: ProjectGridProps) => {
         + 'lg:grid-cols-5 lg:!grid-rows-6 lg:grid-flow-row-dense gap-5'
       }
     >
-      {projects.slice(0, 6).map((project) => (
+      {projects.slice(1, 6).map((project) => (
         <ProjectCard
           project={project}
           key={project.id}
@@ -27,6 +27,19 @@ export const ProjectGrid = (props: ProjectGridProps) => {
           )}
         />
       ))}
+      <ProjectCard
+        project={projects[0]}
+        key={projects[0].id}
+        className={clsx(
+          projects[0].starred
+            ? 'md:row-span-3 md:col-span-3 lg:col-span-3 lg:row-span-3 '
+            : 'md:row-span-3 md:col-span-3 lg:col-span-2 lg:row-span-3',
+          'bg-darkBlue/10',
+        )}
+        noDetails
+        noEllipsis
+        liveText="See more"
+      />
     </div>
   );
 };
