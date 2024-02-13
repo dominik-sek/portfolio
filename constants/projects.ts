@@ -82,7 +82,7 @@ export const projects: Project[] = [
     ],
     liveUrl: 'https://ostoya-dziwnowek.pl/',
     status: 'Completed',
-    technologies: ['React', 'Typescript', 'TailwindCSS', 'Git'],
+    technologies: [],
     // githubUrl: 'https://www.github.com',
     starred: false,
   },

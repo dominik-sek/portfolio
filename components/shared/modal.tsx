@@ -12,6 +12,7 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
   const {
     images, name, description, githubUrl, liveUrl,
   } = project;
+  const hasMoreThanOneImage = images && images.length > 1;
   const variants = {
     hidden: {
       opacity: 0,
@@ -55,9 +56,11 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
         </svg>
       </button>
 
-      <div className="w-full gap-2 flex flex-col">
+      <div className="w-full gap-2 flex flex-col justify-center">
         <h2 className="text-2xl font-bold text-center text-darkBlue">{name}</h2>
-        <p className="text-base text-center text-darkBlue">{description}</p>
+        <div className="flex justify-center">
+          <p className="text-base text-justify text-darkBlue max-w-[75%]">{description}</p>
+        </div>
       </div>
 
       <div id="swiper-container" className="w-full">
@@ -65,7 +68,7 @@ export const Modal = (project: Project, setModalOpen: Dispatch<SetStateAction<bo
           className="h-fit w-full flex items-center justify-center"
           slidesPerView={1}
           spaceBetween={0}
-          navigation
+          navigation={hasMoreThanOneImage}
           pagination={{ clickable: true }}
         >
           {images
